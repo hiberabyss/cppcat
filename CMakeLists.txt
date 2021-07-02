@@ -60,7 +60,16 @@ endif()
 
 set(HEADER_FILES include/client.hpp)
 add_library(catclient STATIC ${HEADER_FILES} ${SOURCE_FILES})
-install(TARGETS catclient DESTINATION lib)
+
+install(
+  FILES ${HEADER_FILES}
+  DESTINATION include/cppcat
+)
+
+install(
+  TARGETS catclient
+  DESTINATION lib
+)
 
 if (BUILD_TEST)
     link_libraries(gtest)
