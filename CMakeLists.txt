@@ -64,6 +64,7 @@ add_library(catclient STATIC ${HEADER_FILES} ${SOURCE_FILES})
 install(
   FILES ${HEADER_FILES}
   DESTINATION include/cppcat
+  RENAME client.h
 )
 
 install(
